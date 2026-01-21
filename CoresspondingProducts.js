@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import mockProducts from "./mockdata";
+// import mockProducts from "./mockdata";
 
 
-function CoresspondingProducts(){
+function CoresspondingProducts( { mockProducts }){
     return (
             <div>
                 {/* Afficher les produits qui correspondent à la recherche */}
@@ -27,3 +27,5 @@ function CoresspondingProducts(){
             </div>
 );
 }
+
+export default CoresspondingProducts;

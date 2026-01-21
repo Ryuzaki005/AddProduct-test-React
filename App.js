@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import mockProducts from "./mockdata";
+import SearchBar from "./SearchBar";
+import CoresspondingProducts from "./CoresspondingProducts";
+
 
 function App() {
     // État pour la saisie de l'utilisateur
@@ -14,11 +17,11 @@ function App() {
     const [cartItems, setCartItems] = useState([]);
 
     function addProductToCart(productFiltered){
-        setCartItems((cartItems)=> [...cartItems, productFiltered]);
+        setCartItems((prev)=> [...prev, productFiltered]);
     }
 
     function removeProductFromCart(productFiltered){
-        setCartItems((prev) => pre.filter((product) => product.id !== productFiltered.id)
+        setCartItems((prev) => prev.filter((product) => product.id !== productFiltered.id)
         );
     }
 
@@ -27,22 +30,10 @@ function App() {
 
     return (
         <>
-            <searchBar searchTerm={searchTerm} handleSearchChange={handleSearchChange} />
-            <CoresspondingProducts />
-            <div>
-                {/* Afficher le contenu du panier */}
-                <h2>Votre panier :</h2>
-                <ul>
-                    {cartItems.map((productFiltered) => {
-                        return (
-                            <div key={productFiltered.id}>
-                                <li>{productFiltered.name}</li>
-                                <button onClick={() => removeProductFromCart(productFiltered)}>-</button>
-                            </div>);
-                    })}
-                </ul>
+            <SearchBar searchTerm={searchTerm} handleSearchChange={handleSearchChange} />
+            <CoresspondingProducts mockProducts={mockProducts} />
+            <Cart cartItems={cartItems} removeProductFromCart={removeProductFromCart} />
 
-            </div>
 
         </>
     );

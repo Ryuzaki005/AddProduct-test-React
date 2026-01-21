@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 
-function searchBar({ searchTerm, handleSearchChange }){
+function SearchBar({ searchTerm, handleSearchChange }){
     return (<div>
                 {/* La barre de recherche */}
 
@@ -15,3 +15,5 @@ function searchBar({ searchTerm, handleSearchChange }){
             </div>
 );
 }
+
+export default SearchBar;
