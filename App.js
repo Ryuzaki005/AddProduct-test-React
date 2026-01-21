@@ -18,7 +18,7 @@ function App() {
     }
 
     function removeProductFromCart(productFiltered){
-        setCartItems((prev) => prev.filter((product) => product.id !== productFiltered.id)
+        setCartItems((prev) => pre.filter((product) => product.id !== productFiltered.id)
         );
     }
 
@@ -27,38 +27,8 @@ function App() {
 
     return (
         <>
-            <div>
-                {/* La barre de recherche */}
-
-                <h1>Cherchez vos produits</h1>
-                <input
-                    type="text"
-                    placeholder="Rechercher un produit..."
-                    value={searchTerm}
-                    onChange={handleSearchChange}
-                />
-            </div>
-            <div>
-                {/* Afficher les produits qui correspondent à la recherche */}
-
-                <h2>Produits correspondants :</h2>
-                <ul>
-                    {mockProducts
-                        .filter((product) =>
-                            product.name
-                                .toLowerCase()
-                                .includes(searchTerm.toLowerCase())
-                        )
-                        .map((productFiltered) => {
-                            return (
-                            <div key={productFiltered.id}>
-                                <li>{productFiltered.name}</li>
-                                <button onClick={() => addProductToCart(productFiltered)}>+</button>
-                            </div>);
-                        }
-                        )}
-                </ul>
-            </div>
+            <searchBar searchTerm={searchTerm} handleSearchChange={handleSearchChange} />
+            <CoresspondingProducts />
             <div>
                 {/* Afficher le contenu du panier */}
                 <h2>Votre panier :</h2>
