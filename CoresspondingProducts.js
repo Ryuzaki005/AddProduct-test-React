@@ -1,8 +1,11 @@
+// -------------------CoresspondingProducts.js
+
+
 import React, { useState } from "react";
 // import mockProducts from "./mockdata";
 
 
-function CoresspondingProducts( { mockProducts }){
+function CoresspondingProducts( { mockProducts, searchTerm, addProductToCart }){
     return (
             <div>
                 {/* Afficher les produits qui correspondent à la recherche */}

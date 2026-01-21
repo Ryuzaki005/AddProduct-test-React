@@ -1,4 +1,7 @@
-import React, { useState } from "react";
+// -------------------Cart.js
+
+
+import React from "react";
 
 
 function Cart({ cartItems, removeProductFromCart }){

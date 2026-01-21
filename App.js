@@ -1,7 +1,11 @@
+// -------------------App.js
+
+
 import React, { useState } from "react";
 import mockProducts from "./mockdata";
 import SearchBar from "./SearchBar";
 import CoresspondingProducts from "./CoresspondingProducts";
+import Cart from "./Cart";
 
 
 function App() {
@@ -31,7 +35,7 @@ function App() {
     return (
         <>
             <SearchBar searchTerm={searchTerm} handleSearchChange={handleSearchChange} />
-            <CoresspondingProducts mockProducts={mockProducts} />
+            <CoresspondingProducts mockProducts={mockProducts} searchTerm={searchTerm} addProductToCart={addProductToCart} />
             <Cart cartItems={cartItems} removeProductFromCart={removeProductFromCart} />
 
 
