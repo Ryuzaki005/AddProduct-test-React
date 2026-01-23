@@ -1,0 +1,125 @@
+/* Cart.module.css */
+.cartSidebar {
+    background: white;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    height: fit-content;
+    position: sticky;
+    top: 20px;
+}
+
+.cartSidebar h2 {
+    margin: 0 0 20px;
+    font-size: 18px;
+    color: #1f2937;
+    font-weight: 600;
+}
+
+.cartItems {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.cartItem {
+    padding: 12px;
+    background: #f3f4f6;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid #e5e7eb;
+    transition: all 0.2s ease;
+}
+
+.cartItem:hover {
+    border-color: #2563eb;
+    background: white;
+}
+
+.cartItemInfo {
+    flex: 1;
+    min-width: 0;
+}
+
+.cartItemName {
+    font-weight: 600;
+    color: #1f2937;
+    font-size: 13px;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cartItemPrice {
+    color: #10b981;
+    font-weight: 700;
+    font-size: 13px;
+    margin: 4px 0 0;
+}
+
+.removeButton {
+    padding: 6px 12px;
+    background: #ef4444;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.removeButton:hover {
+    background: #dc2626;
+}
+
+.removeButton:active {
+    transform: scale(0.98);
+}
+
+.cartEmpty {
+    text-align: center;
+    padding: 30px 0;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.cartTotal {
+    padding-top: 20px;
+    border-top: 1px solid #e5e7eb;
+    text-align: right;
+}
+
+.cartTotal p {
+    margin: 0;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.cartTotalAmount {
+    font-size: 24px;
+    color: #10b981;
+    margin-top: 8px;
+    font-weight: 700;
+}
+
+@media (max-width: 768px) {
+    .cartSidebar {
+        position: static;
+        padding: 20px;
+    }
+
+    .cartItems {
+        max-height: 200px;
+    }
+}
